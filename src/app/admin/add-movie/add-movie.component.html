@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="text-center">Thêm Phim</h1>
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <form [formGroup]="form" (ngSubmit)="handleAddMovie()">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Tên Phim</mat-label>
+                    <input matInput formControlName="tenPhim">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Bí Danh</mat-label>
+                    <input matInput formControlName="biDanh">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Trailer</mat-label>
+                    <input matInput formControlName="trailer">
+                </mat-form-field>
+                <div>
+                    <button type="button" mat-raised-button color="primary" (click)="hinhAnh.click()">File</button>
+                    <input hidden type="file" #hinhAnh (change)="handleChangeFile($event)">
+                    <img *ngIf="imagePreview" [src]="imagePreview" alt="" width="40px" height="40px">
+                </div>
+                <!-- <mat-form-field class="example-full-width">
+                    <mat-label>Hình Ảnh</mat-label>
+                    <input matInput formControlName="hinhAnh">
+                </mat-form-field> -->
+                <mat-form-field class="example-full-width">
+                    <mat-label>Mô Tả</mat-label>
+                    <input matInput formControlName="moTa">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Ngày Khởi Chiếu</mat-label>
+                    <input matInput formControlName="ngayKhoiChieu">
+                </mat-form-field>
+
+                <div>
+                    <button type="submit" mat-raised-button color="accent">Thêm Phim</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
